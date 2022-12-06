@@ -7,7 +7,7 @@ class AppBar extends HTMLElement {
     this.innerHTML = `
       <div class="container">
         <nav class="site-navbar">
-        <button class="nav-toggler">
+        <button class="nav-toggler" aria-label="menu open">
           <span></span>
         </button>
           <a href="#" class="site-logo">Sushi Bon</a>

@@ -2,7 +2,7 @@ import API_ENDPOINT from '../../global/api-endpoint';
 
 const postItem = (resItem) => `
   <div class="list_item">
-    <img class="list_item_thumb" src="${API_ENDPOINT.RESTAURANT_IMAGE + resItem.pictureId}" alt="${resItem.name}" title="${resItem.name}">
+    <img class="list_item_thumb lazyload" data-src="${API_ENDPOINT.RESTAURANT_IMAGE + resItem.pictureId}" alt="${resItem.name}" title="${resItem.name}">
     <div class="city">📍${resItem.city}</div>
     <div class="list_item_content">
       <p class="list_item_rating">

@@ -103,31 +103,48 @@ main {
 
 // Hero Element (Jumbotron Element)
 .hero {
-	display: flex;
 	align-items: center;
+  position: relative;
 	min-height: 380px;
 	width: 100%;
 	text-align: center;
-	background-position: center;
-	background-color: black;
-	background-image: url('../public/images/heros/hero-image_3.jpg');
-	z-index: -1;
+
+  img {
+    width: 100%;
+    perspective: 4px;
+    object-fit: cover;
+    height: 380px;
+  }
+
 	.heroinner {
-		margin: 0 auto;
-		max-width: 800px;
-		.herotitle {
-		color: #fff;
-		font-weight: 600;
-		font-size: 50px;
-		text-shadow: 1px 1px #141414;
-		}
-		.herosubtitle {
-		color: #fff;
-		margin-top: 16px;
-		font-size: 18px;
-		font-weight: 600;
-		text-shadow: 1px 1px #141414;
-		}
+    width: 100%;
+    height: 100%;
+    top: 0;
+    position: absolute;
+    display: flex;
+
+    .heroContent {
+      padding: 0 50px;
+      font-size: 15px;
+      color: white;
+      text-align: center;
+      margin: auto;
+
+      .herotitle {
+        color: #fff;
+        font-weight: 600;
+        font-size: 50px;
+        text-shadow: 1px 1px #141414;
+      }
+        
+      .herosubtitle {
+        color: #fff;
+        margin-top: 16px;
+        font-size: 18px;
+        font-weight: 600;
+        text-shadow: 1px 1px #141414;
+      }
+    }
 	}
 }
 
@@ -146,7 +163,7 @@ main {
 		}
 		a {
       text-decoration: none;
-      color: gray;
+      color: #404040;
 			h1 {
 				font-weight: 700;
 				font-size: 3em;
