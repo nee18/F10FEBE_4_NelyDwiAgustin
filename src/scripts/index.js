@@ -1,28 +1,22 @@
 import 'regenerator-runtime';
+import './utils/menu';
+import './data/resIDB';
+
 import '../scss/style.scss';
-import './resItem.js';
 
-// Menu
-const navToggler = document.querySelector('.nav-toggler');
-const navMenu = document.querySelector('.site-navbar ul'); 
-const navLinks = document.querySelectorAll('.site-navbar a');
+import App from './views/app';
+import swRegister from './utils/sw-register';
 
+const app = new App({
+  appBar: document.querySelector('app-bar'),
+  content: document.querySelector('#content'),
+});
 
-function togglerClick() {
-  navToggler.classList.toggle('toggler-open');
-  navMenu.classList.toggle('close');
-  navMenu.classList.toggle('open');
-}
+window.addEventListener('load', () => {
+  app.renderPage();
+  swRegister();
+});
 
-function navLinkClick() {
-  if (navMenu.classList.contains('open')) {
-    navToggler.click();
-  }
-}
-
-function allEventListners() {
-  navToggler.addEventListener('click', togglerClick);
-  navLinks.forEach((e) => e.addEventListener('click', navLinkClick));
-}
-
-allEventListners();
+window.addEventListener('hashchange', () => {
+  app.renderPage();
+});

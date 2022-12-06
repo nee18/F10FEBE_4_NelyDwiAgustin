@@ -4,47 +4,24 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#A5C9CA" />
+
+  <link rel="apple-touch-icon" href="/icons/icon-192x192.png">
+  <link rel="manifest" href="./app.webmanifest">
+  <link rel="icon" href="./favicon.png">
+  
   <title>Sushi Bon</title>
 </head>
 <body>
-  <a href="#content" class="skip-link">Skip to content</a>
+  <a href="#content" class="skip-content">Skip to content</a>
 
   <!-- App Bar (Navigation Bar) -->
   <header class="navbar-area">
-    <div class="container">
-      <nav class="site-navbar">
-      <button class="nav-toggler">
-        <span></span>
-      </button>
-        <a href="#" class="site-logo">Sushi Bon</a>
-          <ul class="close">
-            <li><a href="/">Home</a></li>
-            <li><a href="#content">Explore</a></li>
-            <li><a href="#">Favorite</a></li>
-            <li><a href="https://github.com/nee18" target="_blank">About Us</a></li>
-          </ul>
-      </nav>
-    </div>
+    <app-bar></app-bar>
   </header>
 
-  <!-- Hero Element (Jumbotron Element) -->
-  <div class="hero">
-      <div class="heroinner">
-          <h1 class="herotitle">Sushi Bon</h1>
-          <p class="herosubtitle">The best restaurants international in Indonesia</p>
-          <p class="herosubtitle">インドネシアの国際的な最高のレストラン</p>
-      </div>
-  </div>
-
   <!-- Daftar Restoran -->
-  <main id="content">
-      <section class="content">
-          <div class="latest">
-              <h1>Explore Restaurant</h1>
-              <div class="list" id="item"></div>
-          </div>
-      </section>
-  </main>
+  <main id="content" tabindex="0"></main>
   
   <!-- Footer -->
   <footer>

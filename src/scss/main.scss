@@ -1,4 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
+@import url('https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css');
+
 * {
 	padding: 0;
 	margin: 0;
@@ -129,7 +131,7 @@ main {
 	}
 }
 
-// Daftar Restoran
+// Daftar Restoran dan Favorit
 .content {
 	padding: 32px;
 	.latest {
@@ -141,6 +143,15 @@ main {
 			font-weight: 700;
 			font-size: 3em;
 			margin-bottom: 50px;
+		}
+		a {
+      text-decoration: none;
+      color: gray;
+			h1 {
+				font-weight: 700;
+				font-size: 3em;
+				margin-bottom: 50px;
+			}
 		}
 		.list {
 			margin: 32px auto auto;
@@ -212,7 +223,7 @@ footer {
 }
 
 // Aksesibilitas Website
-.skip-link {
+.skip-content {
 	position: absolute;
 	top: -100px;
 	left: 0;
@@ -225,4 +236,159 @@ footer {
 	&:focus {
 		top: 100px;
 	}
+}
+
+// Tombol Like
+.like {
+	width: 55px;
+	height: 55px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: black;
+	position: fixed;
+	bottom: 16px;
+	right: 16px;
+	border-radius: 50%;
+	border: 0;
+	font-size: 1.5em;
+	color: #E7F6F2;
+	cursor: pointer;
+	i {
+	  color: darkolivegreen;
+	}
+}
+
+// Halaman Detail Restoran
+.resto-details {
+  display: block;
+  z-index: -1;
+
+  p {
+    line-height: 1.7;
+    font-size: 1.15em;
+  }
+
+  h1 {
+    font-size: 1.8em;
+    color: black;
+  }
+
+  h2 {
+    font-size: 1.4em;
+    color: black;
+    margin-bottom: 8px;
+  }
+
+  h3 {
+    font-size: 1.15em;
+    color: black;
+    margin-top: 8px;
+    margin-bottom: 4px;
+  }
+
+  ul {
+    padding-inline-start: 24px;
+  }
+
+  li {
+    line-height: 1.5;
+  }
+}
+
+// Resto Info
+.resto-info {
+  display: block;
+}
+
+.description {
+  padding: 24px;
+  margin-top: 5px;
+  margin-bottom: 16px;
+  border: 1px solid #d0d0d0;
+  border-radius: 8px;
+}
+
+.desc-content {
+  display: grid;
+  gap: 16px;
+}
+
+.resto-img {
+  padding-bottom: 56.2%;
+  position: relative;
+  z-index: -1;
+  img {
+    position: absolute;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    z-index: -1;
+  }
+}
+
+.info {
+  display: grid;
+  margin-bottom: 16px;
+  gap: 16px;
+}
+
+.main-info,
+.resto-menus {
+  padding: 24px;
+  border: 1px solid #d0d0d0;
+  border-radius: 8px;
+}
+
+.main-info {
+  h2 {
+    margin-bottom: 16px;
+  }
+}
+
+.menus {
+  display: grid;
+  gap: 16px;
+}
+
+// Resto review
+.resto-review {
+  display: block;
+  padding: 24px;
+  border-radius: 8px;
+  overflow: hidden;
+  ul {
+    list-style-type: none;
+    padding-inline-start: 0;
+  }
+}
+
+.review-item {
+  padding: 8px 0;
+  display: flex;
+}
+
+.reviewer-photo {
+  margin-right: 8px;
+}
+
+.review-content,
+form {
+  display: block;
+  padding: 16px;
+  flex: 1;
+  overflow: hidden;
+  background-color: #f7f7f7;
+  border-radius: 16px;
+}
+
+.review-name {
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.review-date {
+  font-size: 0.8em;
+  color: black;
 }
