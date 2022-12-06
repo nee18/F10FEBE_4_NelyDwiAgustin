@@ -2,6 +2,7 @@ const path = require('path');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -26,6 +27,15 @@ module.exports = {
           'sass-loader',
         ],
       },
+      {
+        test: /\.(jpe?g|png|gif|svg)$/i,
+        dependency: { not: ['url'] },
+        loader: 'file-loader',
+        options: {
+          name: 'src/public/images/[name].[ext]',
+        },
+        type: 'javascript/auto',
+      },
     ],
   },
   plugins: [
@@ -44,5 +54,6 @@ module.exports = {
     new FaviconsWebpackPlugin({
       logo: path.resolve(__dirname, 'src/public/favicon.png'),
     }),
+    new CleanWebpackPlugin(),
   ],
 };
